@@ -1,0 +1,32 @@
+enable
+configure terminal
+hostname {nome do dispositivos}
+enable secret [senha]
+ip domain-name {sua opção}
+banner motd "Mensagem"
+service password-encryption
+username {?} privilege ''0 - 15'' secret [senha
+ip default-gateway {gateway do dispositivo}
+no ip domain-lookup
+line console 0 
+password {senha}
+login local
+exit
+interface vlan 1
+ip address {Ultimo Ip e Mascara de Sub}
+no shutdown
+description INTERFACE DE GERENCIAMENTO
+exit
+crypto key generate rsa general-key modulus {chave}
+interface f 0/1
+description {descrição}
+exit
+interface f 0/2
+description {descrição}
+exit
+line vty 0 15
+transport input ssh
+password {senha}
+login local
+end
+wr
